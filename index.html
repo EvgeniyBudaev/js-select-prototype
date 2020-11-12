@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>JavaScript Select Plugin on Prototype</title>
+</head>
+<body>
+
+<ul class="catalog__filter-selects">
+
+    <li
+            class="catalog__filter-element"><p class="catalog__filter-name catalog__filter-item">Сортировать по</p>
+    </li>
+
+    <form class="catalog__filter-element">
+        <li>
+            <div class="select__price" id="select" data-type="select">
+                <div class="select__backdrop" data-type="backdrop"></div>
+                <div class="select__input" data-type="input">
+                    <span data-type="value">возрастанию цены</span>
+                    <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg" data-type="arrow">
+                        <path opacity="0.8" d="M1.4303 0L0 1.21337L8 8L16 1.21337L14.5697 0L8 5.57326L1.4303 0Z" fill="black" fill-opacity="0.8"/>
+                    </svg>
+                </div>
+                <div class="select__dropdown select__dropdown-price">
+                    <ul class="select__list select__list-price">
+                        <li class="select__item" data-type="item">возрастанию цены</li>
+                        <li class="select__item" data-type="item">убыванию цены</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <input type="hidden" data-input="hidden" name="inputHidden" value="">
+    </form>
+
+    <li class="catalog__filter-element"><p class="catalog__filter-name catalog__filter-item">На странице</p></li>
+
+    <form class="catalog__filter-element">
+        <li>
+            <div id="select2" data-type="select">
+                <div class="select__backdrop" data-type="backdrop"></div>
+                <div class="select__input" data-type="input">
+                    <span data-type="value">16</span>
+                    <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg" data-type="arrow">
+                        <path opacity="0.8" d="M1.4303 0L0 1.21337L8 8L16 1.21337L14.5697 0L8 5.57326L1.4303 0Z" fill="black" fill-opacity="0.8"/>
+                    </svg>
+                </div>
+                <div class="select__dropdown">
+                    <ul class="select__list">
+                        <li class="select__item" data-type="item">16</li>
+                        <li class="select__item" data-type="item">32</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <input type="hidden" data-input="hidden" name="inputHidden" value="">
+    </form>
+
+</ul>
+
+
+
+<script type="module">
+    import './index.js'
+
+    const select1 = new Select('#select', {
+        selectedId: '1',
+        onSelect(item) {
+            console.log('[customSelect.js] Catalog Select 1', item)
+        }
+    })
+
+    const select2 = new Select('#select2', {
+        selectedId: '1',
+        onSelect(item) {
+            console.log('[customSelect.js] Catalog Select 2', item)
+        }
+    })
+</script>
+
+</body>
+</html>

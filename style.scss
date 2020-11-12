@@ -1,0 +1,86 @@
+$height: 29px;
+$black:  rgba(0, 0, 0, 1); // #000
+$white: rgba(255, 255, 255, 1); // #fff
+$beige: rgba(176, 151, 106, 1); // #B0976A
+$gray: rgba(229, 229, 229, 1); // #e5e5e5
+
+.select {
+  max-width: 210px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  &.open{
+    .select__dropdown {
+      height: 100%;
+      min-height: 108px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+      transition: all .4s;
+      animation: fadeEffect .4s;
+    }
+    .select__input {
+      border-bottom: 1px solid transparent;
+    }
+    .select__backdrop {
+      display: block;
+    }
+    & svg {
+      transform: rotate(-90deg);
+    }
+  }
+  &__input {
+    border: 1px solid $beige;
+    height: $height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  &__dropdown {
+    position: absolute;
+    border: 1px solid transparent;
+    top: $height;
+    left: 0;
+    right: 0;
+    height: 0;
+    min-height: 0;
+    overflow-y: hidden;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0);
+    background-color: $white;
+    transition: all .4s;
+    animation: fadeEffectClose .4s;
+  }
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 10;
+    background-color: $white;
+    animation: fadeEffect .4s;
+  }
+  &__backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: -1;
+  }
+  &__item {
+    padding: 1rem;
+    border-bottom: 1px solid $beige;
+    &.selected {
+      background-color: bisque;
+    }
+    &:hover {
+      background-color: $gray;
+      cursor: pointer;
+      transition: .15s background-color ease-in;
+    }
+  }
+}

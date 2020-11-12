@@ -1,0 +1,113 @@
+.select {
+  max-width: 210px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.select.open .select__dropdown {
+  height: 100%;
+  min-height: 108px;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  -webkit-animation: fadeEffect .4s;
+          animation: fadeEffect .4s;
+}
+
+.select.open .select__input {
+  border-bottom: 1px solid transparent;
+}
+
+.select.open .select__backdrop {
+  display: block;
+}
+
+.select.open svg {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.select__input {
+  border: 1px solid #b0976a;
+  height: 29px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 6px 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.select__dropdown {
+  position: absolute;
+  border: 1px solid transparent;
+  top: 29px;
+  left: 0;
+  right: 0;
+  height: 0;
+  min-height: 0;
+  overflow-y: hidden;
+  -webkit-box-shadow: 2px 3px 5px rgba(0, 0, 0, 0);
+          box-shadow: 2px 3px 5px rgba(0, 0, 0, 0);
+  background-color: white;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  -webkit-animation: fadeEffectClose .4s;
+          animation: fadeEffectClose .4s;
+}
+
+.select__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  z-index: 1;
+  background-color: white;
+  -webkit-animation: fadeEffect .4s;
+          animation: fadeEffect .4s;
+}
+
+.select__backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: -1;
+}
+
+.select__item {
+  padding: 1rem;
+  border-bottom: 1px solid #b0976a;
+}
+
+.select__item.selected {
+  background-color: bisque;
+}
+
+.select__item:hover {
+  background-color: #e5e5e5;
+  cursor: pointer;
+  -webkit-transition: .15s background-color ease-in;
+  transition: .15s background-color ease-in;
+}
+
+li {
+  list-style: none;
+}
+
+.select.select__price {
+  z-index: 2;
+}
+/*# sourceMappingURL=style.css.map */
